@@ -18,3 +18,20 @@ Daily meetings, retrospective, sprint planning, and sprint review are all planne
 - sprint planning on Monday in the mornings
 - sprint review on Friday in the evenings
 - sprint restrospect after each sprint review
+
+## Commit Message Conventions
+
+For commit messages use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Style is the following - for new features, fixes, refactors, doc changes, testing, performance changes respectively:
+
+```
+feat: <short description in present simple here>
+fix: <short description in present simple here>
+refactor: <short description in present simple here>
+docs: <short description in present simple here>
+test: <short description in present simple here>
+perf: <short description in present simple here>
+```
+
+## Code Style Conventions
+
+They are outlined in `.eslintrc` file and will be formatted automatically by [Prettier](https://prettier.io/).
