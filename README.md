@@ -1,4 +1,6 @@
-# Team 3 group project
+# Team 3 group project: Net Worth Tracker
+
+A Net Worth Tracker (Manager) is an app that allows users to calculate and see their net worth over time. A user would add their assets and liabilities and the tool would allow them to easily comprehend the results.
 
 ## Team Members
 - Svyatoslav Semenyuk (@Prometheus3375)
@@ -18,6 +20,19 @@ Daily meetings, retrospective, sprint planning, and sprint review are all planne
 - sprint planning on Monday in the mornings
 - sprint review on Friday in the evenings
 - sprint restrospect after each sprint review
+
+## Running the app
+Make sure you have Node.js installed on your system (along with NPM). If not, please visit [this link](https://nodejs.org/en/download/) for additional instructions. Now, install yarn if you don't have it. To see installation instructions for Yarn, please visit [this link](https://classic.yarnpkg.com/en/docs/install).
+
+Please note that on Mondays the could should be reviewed and put on the `main` branch. However, it may not be as some of the members have full-time jobs. So, for Sprint 0, the latest changes are available on `feat/create-project`.
+
+After that, clone our repository, and run the following (make sure you have `yarn` in your PATH and `cd` is for UNIX, so use Windows alternative if your OS is Windows):
+```
+cd net-worth-tracker
+yarn && yarn start
+```
+
+The local server should be up and running.
 
 ## Commit Message Conventions
 
