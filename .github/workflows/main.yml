@@ -33,6 +33,7 @@ jobs:
       - name: run CI
         run: |
           echo Starting a build...
+          cd net-worth-tracker
           yarn install
           yarn lint
           yarn test
