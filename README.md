@@ -9,7 +9,7 @@ A Net Worth Tracker (Manager) is an app that allows users to calculate and see t
 
 ## Technologies
 
-We discussed between making a desktop app or a web application. Tradeoffs included things like privacy, platform independence, ease of use, etc. After careful consideration we decided to make a web application, but without a database that is stored in the cloud. We realize that the privacy is the main aspect of our product: users do **not** want their data to be seen by anyone except themselves.
+We discussed between making a desktop app or a web application. Tradeoffs included things like privacy, platform independence, ease of use, etc. After careful consideration we decided to make a web application with a cloud-stored database. We realize that the privacy is the main aspect of our product: users do **not** want their data to be seen by anyone except themselves, so we will implement additional privacy measures.
 
 To make a web app, it is best to use JavaScript, so we decided to use *React* as our frontend framework to use. For the database, we will use Firebase.
 
