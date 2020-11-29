@@ -42,9 +42,8 @@ export const NetWorth: FC = () => {
 					width: '100%',
 				}}
 			>
-				{netWorth >= 0
-					? `€ ${netWorth}`
-					: 0}
+				{Number.isInteger(netWorth) &&
+					`€ ${netWorth}`}
 			</Text>
 		</Card>
 	);
