@@ -7,6 +7,7 @@ export const AssetInput: FC = () => {
   own or control with the expectation that it will provide a future benefit.
   This includes your investments, house, precious metals, etc.
   Here you should input the total value of all your assets.`;
+
 	return (
 		<InputCard
 			tooltipValue={tooltipValue}

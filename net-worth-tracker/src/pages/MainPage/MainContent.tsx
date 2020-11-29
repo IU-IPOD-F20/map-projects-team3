@@ -1,7 +1,16 @@
 import React, { FC } from 'react';
-import { Layout, Breadcrumb } from 'antd';
+import {
+	Row,
+	Col,
+	Divider,
+	Layout,
+	Breadcrumb,
+} from 'antd';
 
-import { AssetInput } from '../../components';
+import {
+	AssetInput,
+	LiabilityInput,
+} from '../../components';
 
 const { Content } = Layout;
 
@@ -31,7 +40,18 @@ export const MainContent: FC = () => {
 					minHeight: 360,
 				}}
 			>
-				<AssetInput />
+				<Row gutter={16}>
+					<Col>
+						<AssetInput />
+					</Col>
+
+					<Col>
+						<LiabilityInput />
+					</Col>
+				</Row>
+				<Row>
+					<Divider />
+				</Row>
 			</div>
 		</Content>
 	);
