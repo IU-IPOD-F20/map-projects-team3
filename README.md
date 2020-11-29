@@ -50,3 +50,7 @@ perf: <short description in present simple here>
 ## Code Style Conventions
 
 They are outlined in `.eslintrc` file and will be formatted automatically by [Prettier](https://prettier.io/).
+
+## Sprint Reviews
+
+![Sprint Evaluations](https://docs.google.com/spreadsheets/d/e/2PACX-1vTXIhfQzTkLutk3Wp2zWwAcCXQe7GZCZGWMZHp4nMPAgInjsxWohwH5hxwd4N9iyATx-H-QBAiTGWlj/pubchart?oid=1269973863&format=interactive)
