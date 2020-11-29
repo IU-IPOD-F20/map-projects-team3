@@ -6,3 +6,4 @@ export { Foot } from './Foot';
 // business logic
 export { AssetInput } from './AssetInput';
 export { LiabilityInput } from './LiabilityInput';
+export { NetWorth } from './NetWorth';
