@@ -1,9 +1,13 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+import { mount } from 'enzyme';
+import { MainPage } from './pages';
+import { setupTestApp } from './test/setupTestApp';
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('<App />', () => {
+	const app = setupTestApp('/');
+
+	it('renders main page', () => {
+		expect(app.find(MainPage)).toHaveLength(
+			1
+		);
+	});
 });
