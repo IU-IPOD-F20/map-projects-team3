@@ -8,6 +8,7 @@ import {
 	Foot,
 	AssetInput,
 	LiabilityInput,
+	NetWorth,
 } from './components';
 
 // Add setup for Jest
@@ -63,5 +64,11 @@ describe('rendering of asset and liability cards', () => {
 		expect(
 			app.find(LiabilityInput)
 		).toHaveLength(1);
+	});
+
+	it('renders total net worth', () => {
+		expect(app.find(NetWorth)).toHaveLength(
+			1
+		);
 	});
 });
