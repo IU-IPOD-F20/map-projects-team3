@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import { InputNumber, Tooltip, Card } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 
+import { useValues } from '../../context/ValueContext/ValueContext';
+
 interface InputCardProps {
 	tooltipValue: string;
 	cardTitle: string;
@@ -11,6 +13,20 @@ export const InputCard: FC<InputCardProps> = ({
 	tooltipValue,
 	cardTitle,
 }) => {
+	const {
+		assets,
+		setAssets,
+		liabilities,
+		setLiabilities,
+	} = useValues();
+
+	console.log({
+		assets,
+		setAssets,
+		liabilities,
+		setLiabilities,
+	});
+
 	return (
 		<Card
 			title={cardTitle}
