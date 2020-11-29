@@ -11,7 +11,6 @@ export const AssetInput: FC = () => {
   Here you should input the total value of all your assets.`;
 
 	const { assets, setAssets } = useValues();
-	console.log({ assets });
 
 	return (
 		<InputCard
