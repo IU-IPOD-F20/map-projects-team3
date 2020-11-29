@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { Layout, Breadcrumb } from 'antd';
 
+import { AssetInput } from '../../components';
+
 const { Content } = Layout;
 
 export const MainContent: FC = () => {
@@ -29,7 +31,7 @@ export const MainContent: FC = () => {
 					minHeight: 360,
 				}}
 			>
-				Content goes here.
+				<AssetInput />
 			</div>
 		</Content>
 	);
