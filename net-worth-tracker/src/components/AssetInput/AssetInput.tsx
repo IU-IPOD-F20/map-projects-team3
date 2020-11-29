@@ -11,6 +11,7 @@ export const AssetInput: FC = () => {
   Here you should input the total value of all your assets.`;
 
 	const { assets, setAssets } = useValues();
+	console.log({ assets });
 
 	return (
 		<InputCard
@@ -18,7 +19,7 @@ export const AssetInput: FC = () => {
 			cardTitle="Total Asset Value"
 			value={assets}
 			onChange={(val) => {
-				if (setAssets) {
+				if (setAssets && val > 0) {
 					setAssets(val);
 				}
 			}}

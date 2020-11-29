@@ -19,7 +19,7 @@ export const LiabilityInput: FC = () => {
 			cardTitle="Total Liability Value"
 			value={liabilities}
 			onChange={(val) => {
-				if (setLiabilities) {
+				if (setLiabilities && val > 0) {
 					setLiabilities(val);
 				}
 			}}
