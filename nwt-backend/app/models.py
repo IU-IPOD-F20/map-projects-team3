@@ -13,7 +13,7 @@ class PrintableModel(Model):
     def __str__(self):
         return str(self.to_dict())
 
-    def to_dict(self, exclude: set[str] = set()):
+    def to_dict(self, *, exclude: set[str] = set()):
         opts = self._meta
         data = {}
         for f in chain(opts.concrete_fields, opts.private_fields):
