@@ -13,7 +13,6 @@ def index(request):
 
 class LoginRequired(LoginRequiredMixin):
     login_url = f'/{settings.PAGE_LOGIN}'
-    # redirect_field_name =
 
 
 class LoginView(View):
@@ -34,7 +33,7 @@ class LogoutView(View):
             logout(request)
             return http.HttpResponseRedirect(f'/{settings.PAGE_AFTER_LOGOUT}')
 
-        return HttpResponse('Not authenticated', status=401)
+        return HttpResponse(b'Not authenticated', status=401)
 
 
 class UserTotalView(LoginRequired, View):
@@ -54,3 +53,8 @@ class RecordsView(LoginRequired, View):
         query = models.Record.objects.filter(user_id=request.user.id)
         data = [record.to_dict(exclude={'id', 'user'}) for record in query]
         return http.JsonResponse(data, safe=False)
+
+    def post(self, request: HttpRequest):
+        """
+        TODO
+        """
