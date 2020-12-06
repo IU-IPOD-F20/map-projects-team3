@@ -64,7 +64,7 @@ In this week we were unable to finish all the tasks that we set for ourselves, b
 
 We also now support code coverage reporting. Our results for now aren't impressive, but we hope to expand on this matter and improve. Here are the initial results with just testing if components are adequately mounting to the screen
 
-![Code Coverage Report Sprint #2](./coverage/sprint_2.png)
+![Code Coverage Report Sprint #2](./coverage-images/sprint_2.png)
 
 ## Sprint Reviews
 
