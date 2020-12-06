@@ -36,8 +36,8 @@ Request with POST fields `username` and `password`.
 
 ```json
 {
-  "assets": 100,
-  "liabilities": 24
+  "asset": 100,
+  "liability": 24
 }
 ```
 

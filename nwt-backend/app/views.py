@@ -59,8 +59,8 @@ class UserTotalView(View):
         a_sum = query.filter(type_id=settings.RECORD_TYPE_ASSET_ID)
         l_sum = query.filter(type_id=settings.RECORD_TYPE_LIABILITY_ID)
         data = {
-            'assets'     : sum(record.amount for record in a_sum),
-            'liabilities': sum(record.amount for record in l_sum),
+            settings.RECORD_TYPE_ASSET_NAME    : sum(record.amount for record in a_sum),
+            settings.RECORD_TYPE_LIABILITY_NAME: sum(record.amount for record in l_sum),
         }
         return http.JsonResponse(data)
 
