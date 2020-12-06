@@ -8,6 +8,7 @@ from django.http import HttpRequest, HttpResponse
 from django.views.generic import View
 
 from . import models, settings
+from .settings import RecordTypeConverter
 
 
 class LoginRequired(LoginRequiredMixin):
@@ -71,11 +72,22 @@ class RecordsView(View):
         query = models.Record.objects.filter(user_id=request.user.id)
         data = [record.to_dict(exclude={'id', 'user'}) for record in query]
         for d in data:
-            d['type'] = settings.RecordTypeConverter[d['type']]
+            d['type'] = RecordTypeConverter[d['type']]
         return http.JsonResponse(data, safe=False)
 
     @login_required
     def post(self, request: HttpRequest) -> HttpResponse:
-        """
-        TODO
-        """
+        data = {**request.POST, 'user': request.user}
+        typ = data['type']
+        if typ not in RecordTypeConverter:
+            return http.HttpResponseBadRequest(f'Record type must be {RecordTypeConverter.values()}, got {typ}')
+        if isinstance(typ, str):
+            data['type'] = RecordTypeConverter[typ]
+
+        try:
+            record = models.Record(**data)
+        except Exception as e:
+            return http.HttpResponseBadRequest(b'Invalid data')
+
+        record.save()
+        return HttpResponse()

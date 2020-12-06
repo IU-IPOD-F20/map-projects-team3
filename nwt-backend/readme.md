@@ -76,6 +76,21 @@ Request with POST fields `username` and `password`.
 
 #### POST
 
+Request with key-value POST data as shown below:
+
+```
+{
+  "date_time": "2020-12-05T16:10:35Z",
+  "name"     : "Stipend",  // any string with 200 max chars
+  "type"     : "asset",    // "asset", "liability", 1, 2
+  "amount"   : 100         // any non-negative integer
+}
+```
+
+- If authenticated and data is valid: 200 OK.
+- If authenticated and data is not valid: 400 Bad Request.
+- Otherwise: 401 Unauthorized.
+
 Not yet implemented.
 
 
