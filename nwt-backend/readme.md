@@ -12,23 +12,23 @@
 
 ## API
 
-### /login/
+### login/
 
 #### POST
 
 Request with POST fields `username` and `password`.
 
 - No such user: 400 Bad Request.
-- Otherwise: 302 Redirect to **/home**.
+- Otherwise: 302 Redirect to **home/**.
 
-### /logout/
+### logout/
 
 #### GET
 
-- If authenticated: 302 Redirect to **/home**.
+- If authenticated: 302 Redirect to **home/**.
 - Otherwise: 401 Unauthorized.
 
-### /api-total/
+### api-total/
 
 #### GET
 
@@ -43,7 +43,7 @@ Request with POST fields `username` and `password`.
 
 - Otherwise: 401 Unauthorized.
 
-### /api-records/
+### api-records/
 
 #### GET
 
