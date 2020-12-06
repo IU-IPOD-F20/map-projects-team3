@@ -14,7 +14,7 @@ RECORD_TYPE_LIABILITY_ID = None
 RecordTypeConverter: Bijection[int, str] = Bijection()
 
 
-def setup():
+def setup_record_types():
     global RECORD_TYPE_ASSET_ID, RECORD_TYPE_LIABILITY_ID
     from .models import RecordType
 
