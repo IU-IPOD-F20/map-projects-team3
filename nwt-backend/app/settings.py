@@ -1,9 +1,9 @@
 from common.biject import Bijection
 
-PAGE_HOME = 'home'
-PAGE_LOGIN = 'login'
-PAGE_LOGOUT = 'logout'
-PAGE_AFTER_LOGOUT = PAGE_HOME
+PAGE_HOME = 'home/'
+PAGE_LOGIN = 'login/'
+PAGE_LOGOUT = 'logout/'
+PAGE_AFTER_LOG = PAGE_HOME
 
 RECORD_TYPE_ASSET_NAME = 'asset'
 RECORD_TYPE_ASSET_ID = None

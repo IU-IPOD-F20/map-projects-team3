@@ -42,14 +42,14 @@ class LoginView(View):
             return http.HttpResponseBadRequest(b'No such user')
 
         login(request, user)
-        return http.HttpResponseRedirect(f'/{settings.PAGE_HOME}')
+        return http.HttpResponseRedirect(f'/{settings.PAGE_AFTER_LOG}')
 
 
 class LogoutView(View):
     @login_required
     def get(self, request: HttpRequest):
         logout(request)
-        return http.HttpResponseRedirect(f'/{settings.PAGE_AFTER_LOGOUT}')
+        return http.HttpResponseRedirect(f'/{settings.PAGE_AFTER_LOG}')
 
 
 class UserTotalView(View):
