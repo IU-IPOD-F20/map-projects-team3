@@ -2,7 +2,9 @@
 
 A Net Worth Tracker (Manager) is an app that allows users to calculate and see their net worth over time. A user would add their assets and liabilities and the tool would allow them to easily comprehend the results.
 
-## Project Screenshot (after Sprint 1)
+## Project UI (after Sprint 2)
+
+The website can be accessed on this link: [https://map-course-app.web.app/](https://map-course-app.web.app/).
 
 ![Project Dashboard Screenshot](./app_screenshot.png)
 
@@ -40,24 +42,7 @@ cd net-worth-tracker
 yarn && yarn start
 ```
 
-The local server should be up and running.
-
-## Commit Message Conventions
-
-For commit messages use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Style is the following - for new features, fixes, refactors, doc changes, testing, performance changes respectively:
-
-```
-feat: <short description in present simple here>
-fix: <short description in present simple here>
-refactor: <short description in present simple here>
-docs: <short description in present simple here>
-test: <short description in present simple here>
-perf: <short description in present simple here>
-```
-
-## Code Style Conventions
-
-They are outlined in `.eslintrc` file and will be formatted automatically by [Prettier](https://prettier.io/).
+The local server should be up and running. For more information on code structure, and quality assurance, please visit our wiki page [on this link](https://github.com/IU-IPOD-F20/map-projects-team3/wiki/Net-Worth-Tracker-Documentation).
 
 ## Overviews of Sprints
 
@@ -70,3 +55,13 @@ Below is the summary in terms of Story Points and effort needed to perform diffe
 In total this sprint required 11 story points. There were three tasks, with weights of 5, and two with weight of 3. We managed to finish all the tasks that we've set out to do. While the prototype is very basic at this point, it fulfills all the requirements that the client has defined.
 
 ![Burndown Chart Sprint #1](./burndown-charts/sprint_1.png)
+
+### Sprint 2
+
+In this week we were unable to finish all the tasks that we set for ourselves, but we did in fact provide a fully-functioning prototype, still. In this sprint we set up automatic deployment with testing checks. In addition, we worked on the architecture and initial entities for our application. The result can be found on this link: [https://map-course-app.web.app/](https://map-course-app.web.app/).
+
+![Burndown Chart Sprint #2](./burndown-charts/sprint_2.png)
+
+We also now support code coverage reporting. Our results for now aren't impressive, but we hope to expand on this matter and improve. Here are the initial results with just testing if components are adequately mounting to the screen
+
+![Code Coverage Report Sprint #2](./coverage/sprint_2.png)
