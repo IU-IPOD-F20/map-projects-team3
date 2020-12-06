@@ -1,3 +1,6 @@
+import functools
+from typing import Callable
+
 from django import http
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,12 +10,27 @@ from django.views.generic import View
 from . import models, settings
 
 
-def index(request):
-    return HttpResponse('Hello, world. You\'re at the polls index.')
-
-
 class LoginRequired(LoginRequiredMixin):
     login_url = f'/{settings.PAGE_LOGIN}'
+
+
+_Method = Callable[[View, HttpRequest], HttpResponse]
+_Func = Callable[[View, HttpRequest], HttpResponse]
+
+
+def login_required(f: _Method) -> _Method:
+    @functools.wraps(f)
+    def wrapper(self: View, request: HttpRequest) -> HttpResponse:
+        if hasattr(request, 'user') and request.user.is_authenticated:
+            return f(self, request)
+
+        return HttpResponse(b'Not authenticated', status=401)
+
+    return wrapper
+
+
+def index(request):
+    return HttpResponse('Hello, world. You\'re at the polls index.')
 
 
 class LoginView(View):
@@ -28,16 +46,15 @@ class LoginView(View):
 
 
 class LogoutView(View):
+    @login_required
     def get(self, request: HttpRequest):
-        if request.user.is_authenticated:
-            logout(request)
-            return http.HttpResponseRedirect(f'/{settings.PAGE_AFTER_LOGOUT}')
-
-        return HttpResponse(b'Not authenticated', status=401)
+        logout(request)
+        return http.HttpResponseRedirect(f'/{settings.PAGE_AFTER_LOGOUT}')
 
 
-class UserTotalView(LoginRequired, View):
-    def get(self, request: HttpRequest):
+class UserTotalView(View):
+    @login_required
+    def get(self, request: HttpRequest) -> HttpResponse:
         query = models.Record.objects.filter(user_id=request.user.id)
         a_sum = query.filter(type_id=settings.RECORD_TYPE_ASSET_ID)
         l_sum = query.filter(type_id=settings.RECORD_TYPE_LIABILITY_ID)
@@ -48,13 +65,17 @@ class UserTotalView(LoginRequired, View):
         return http.JsonResponse(data)
 
 
-class RecordsView(LoginRequired, View):
-    def get(self, request: HttpRequest):
+class RecordsView(View):
+    @login_required
+    def get(self, request: HttpRequest) -> HttpResponse:
         query = models.Record.objects.filter(user_id=request.user.id)
         data = [record.to_dict(exclude={'id', 'user'}) for record in query]
+        for d in data:
+            d['type'] = settings.RecordTypeConverter[d['type']]
         return http.JsonResponse(data, safe=False)
 
-    def post(self, request: HttpRequest):
+    @login_required
+    def post(self, request: HttpRequest) -> HttpResponse:
         """
         TODO
         """
