@@ -5,8 +5,8 @@
 1. (Optional) Initialize virtual environment and activate it according to the
    [tutorial](https://docs.python.org/3/library/venv.html).
 1. [Update pip](https://pip.pypa.io/en/stable/installing/#upgrading-pip).
-   - On Linux and macOS run `pip install -U pip`.
-   - On Windows run `python -m pip install -U pip`.
+    - On Linux and macOS run `pip install -U pip`.
+    - On Windows run `python -m pip install -U pip`.
 1. Run `pip install -U setuptools wheel`. This will update setuptools and wheel packages.
 1. Run `pip install -r requirements.txt`. This will install all necessary packages for the project.
 
@@ -36,12 +36,12 @@ Request with POST fields `username` and `password`.
 
 ```json
 {
-   "assets": 100,
-   "liabilities": 24
+  "assets": 100,
+  "liabilities": 24
 }
 ```
 
-- Otherwise: 302 Redirect to **/login**.
+- Otherwise: 401 Unauthorized.
 
 ### /api-records
 
@@ -51,28 +51,28 @@ Request with POST fields `username` and `password`.
 
 ```json
 [
-   {
-      "date_time": "2020-12-05T16:09:52Z",
-      "name": "Milk",
-      "type": 2,
-      "amount": 10
-   },
-   {
-      "date_time": "2020-12-05T16:10:15Z",
-      "name": "Bread",
-      "type": 2,
-      "amount": 14
-   },
-   {
-      "date_time": "2020-12-05T16:10:35Z",
-      "name": "Stipend",
-      "type": 1,
-      "amount": 100
-   }
+  {
+    "date_time": "2020-12-05T16:09:52Z",
+    "name": "Milk",
+    "type": "liability",
+    "amount": 10
+  },
+  {
+    "date_time": "2020-12-05T16:10:15Z",
+    "name": "Bread",
+    "type": "liability",
+    "amount": 14
+  },
+  {
+    "date_time": "2020-12-05T16:10:35Z",
+    "name": "Stipend",
+    "type": "asset",
+    "amount": 100
+  }
 ]
 ```
 
-- Otherwise: 302 Redirect to **/login**.
+- Otherwise: 401 Unauthorized.
 
 #### POST
 
