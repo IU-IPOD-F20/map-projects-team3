@@ -9,6 +9,11 @@
     - On Windows run `python -m pip install -U pip`.
 1. Run `pip install -U setuptools wheel`. This will update setuptools and wheel packages.
 1. Run `pip install -r requirements.txt`. This will install all necessary packages for the project.
+1. Create `backend/secret_key.py` file and put secret key value inside:
+
+```python
+KEY = 'your_secret_key'
+```
 
 ## API
 
