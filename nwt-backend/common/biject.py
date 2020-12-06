@@ -62,11 +62,14 @@ class Bijection(Generic[_T1, _T2], Collection):
     def __contains__(self, value: _K):
         return value in self._data
 
-    def values(self) -> set[_V]:
+    def values(self) -> set[_K]:
+        return set(self._data.keys())
+
+    def items(self) -> set[_V]:
         return set(self._data.values())
 
-    def __iter__(self) -> Iterator[_V]:
-        return iter(self.values())
+    def __iter__(self) -> Iterator[_K]:
+        return iter(self._data.keys())
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -84,5 +87,5 @@ class Bijection(Generic[_T1, _T2], Collection):
         self._data.clear()
 
     def __repr__(self):
-        entries = ', '.join(str(v) for v in self.values())
+        entries = ', '.join(str(v) for v in self.items())
         return f'{self.__class__.__name__}[{entries}]'
