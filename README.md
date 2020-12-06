@@ -58,6 +58,10 @@ In total this sprint required 11 story points. There were three tasks, with weig
 
 ### Sprint 2
 
-In this week we were unable to finish all the tasks that we set for ourselves, but we did in fact provide a fully-functioning prototype, still. In this sprint we set up automatic deployment with testing checks. The result can be found on this link: [https://map-course-app.web.app/](https://map-course-app.web.app/).
+In this week we were unable to finish all the tasks that we set for ourselves, but we did in fact provide a fully-functioning prototype, still. In this sprint we set up automatic deployment with testing checks. In addition, we worked on the architecture and initial entities for our application. The result can be found on this link: [https://map-course-app.web.app/](https://map-course-app.web.app/).
 
-![Burndown Chart Sprint #2](./burndown-charts/sprint_1.png)
+![Burndown Chart Sprint #2](./burndown-charts/sprint_2.png)
+
+We also now support code coverage reporting. Our results for now aren't impressive, but we hope to expand on this matter and improve. Here are the initial results with just testing if components are adequately mounting to the screen
+
+![Code Coverage Report Sprint #2](./coverage/sprint_2.png)
