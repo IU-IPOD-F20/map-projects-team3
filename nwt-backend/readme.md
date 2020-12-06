@@ -1,7 +1,7 @@
 ## Installation
 
 1. Install [Python 3.9](https://www.python.org/downloads/release/python-390/).
-1. In terminal change current working directory to the root of this repository.
+1. In terminal change current working directory to the base directory of this file.
 1. (Optional) Initialize virtual environment and activate it according to the
    [tutorial](https://docs.python.org/3/library/venv.html).
 1. [Update pip](https://pip.pypa.io/en/stable/installing/#upgrading-pip).
@@ -17,6 +17,8 @@
 
 1. Run `python manage.py makemigrations`.
 1. Run `python manage.py migrate`.
+1. Allow incoming TCP requests for port 8000
+    - On Ubuntu run `ufw allow 8000/tcp`.
 
 ## Usage
 
