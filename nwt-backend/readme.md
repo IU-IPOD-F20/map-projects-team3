@@ -114,3 +114,7 @@ Request with key-value POST data as shown below:
 - If authenticated and data is valid: 200 OK.
 - If authenticated and data is not valid: 400 Bad Request.
 - Otherwise: 401 Unauthorized.
+
+## Database Structure
+
+![UML of DB](UML of DB.png)
