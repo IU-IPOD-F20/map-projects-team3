@@ -117,4 +117,4 @@ Request with key-value POST data as shown below:
 
 ## Database Structure
 
-![UML](UML of DB.png)
+![UML](UML%20of%20DB.png)
