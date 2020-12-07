@@ -10,6 +10,7 @@ import {
 import {
 	AssetInput,
 	LiabilityInput,
+	NetWorth,
 } from '../../components';
 
 import { ValueContext } from '../../context';
@@ -69,6 +70,10 @@ export const MainContent: FC = () => {
 
 						<Col>
 							<LiabilityInput />
+						</Col>
+
+						<Col>
+							<NetWorth />
 						</Col>
 					</Row>
 					<Row>
