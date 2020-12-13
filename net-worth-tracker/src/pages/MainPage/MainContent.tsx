@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import {
 	Row,
 	Col,
@@ -13,7 +13,7 @@ import {
 	NetWorth,
 } from '../../components';
 
-import { ApiContext, ValueContext } from '../../context';
+import { ValueContext } from '../../context';
 
 const { Content } = Layout;
 
@@ -25,19 +25,6 @@ export const MainContent: FC = () => {
 		liabilities,
 		setLiabilities,
 	] = useState<number>(0);
-
-	const api = useContext(ApiContext);
-
-	useEffect(() => {
-		api.login('picroc', '123')
-			.then(() => {
-				console.log("Nice");
-				api.getRecords()
-					.then(res => console.log('Supa nice', res))
-					.catch(err => console.log('Baad', err));
-			})
-			.catch(err => console.log("Not nice", err));
-	})
 
 	return (
 		<ValueContext.Provider

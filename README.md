@@ -66,6 +66,24 @@ We also now support code coverage reporting. Our results for now aren't impressi
 
 ![Code Coverage Report Sprint #2](./coverage-images/sprint_2.png)
 
+### Sprint 3
+
+In this sprint we primarily worked on the integration between our frontend and the backend. There was a lot of work in configuring the communication to work flawlessly.
+
+_Frontend_: communication with the backend service. Done via using React’s Context API. Reusable methods for data fetching, standardised.
+
+_Backend_: allowed cross origin resource sharing, and ensured secure communication by using https.
+
+Added main authentication and authorisation functionalities. Now users could use these endpoints to access the data stored in our backend.
+
+However, we _couldn’t manage to fit in deploying the new backend version to the production_, so we ran the server on our local machines. This of course means that the production version is not ready to be deployed, as there would be no server to connect to.
+
+Next steps would be to deploy the backend so it is readily reachable from the frontend application.
+
+As the Burndown chart suggests, this week we took on fewer number of tasks due to our other final exams and projects. And still we didn't manage to fulfill all the tasks that we set out to do. However, we're still providing our users with a product that holds value to them, but in our eyes we did not manage to increase value this sprint. Note that the last 3 story points if we completed them, they would bring value to our customers.
+
+![Burndown Chart Sprint #3](./burndown-charts/sprint_3.png)
+
 ## Sprint Reviews
 
 ![Sprint Evaluations](https://docs.google.com/spreadsheets/d/e/2PACX-1vTXIhfQzTkLutk3Wp2zWwAcCXQe7GZCZGWMZHp4nMPAgInjsxWohwH5hxwd4N9iyATx-H-QBAiTGWlj/pubchart?oid=1269973863&format=interactive)
