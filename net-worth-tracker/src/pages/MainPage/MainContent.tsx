@@ -1,9 +1,4 @@
-import React, {
-	FC,
-	useContext,
-	useEffect,
-	useState,
-} from 'react';
+import React, { FC, useState } from 'react';
 import {
 	Row,
 	Col,
@@ -18,10 +13,7 @@ import {
 	NetWorth,
 } from '../../components';
 
-import {
-	ApiContext,
-	ValueContext,
-} from '../../context';
+import { ValueContext } from '../../context';
 
 const { Content } = Layout;
 
@@ -33,8 +25,6 @@ export const MainContent: FC = () => {
 		liabilities,
 		setLiabilities,
 	] = useState<number>(0);
-
-	const api = useContext(ApiContext);
 
 	return (
 		<ValueContext.Provider
