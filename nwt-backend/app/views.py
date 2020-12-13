@@ -1,4 +1,5 @@
 import functools
+import json
 from typing import Callable
 
 from django import http
@@ -36,8 +37,10 @@ def index(request):
 
 class LoginView(View):
     def post(self, request: HttpRequest) -> HttpResponse:
-        username = request.POST['username']
-        password = request.POST['password']
+        creds = json.loads(request.body)
+        username = creds['username']
+        password = creds['password']
+        print('Got ', username, password, creds)
         user = authenticate(request, username=username, password=password)
         if user is None:
             return http.HttpResponseBadRequest(b'No such user')
